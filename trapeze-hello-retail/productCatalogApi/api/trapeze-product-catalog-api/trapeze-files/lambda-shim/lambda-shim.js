@@ -118,6 +118,8 @@ module.exports.makeShim = function ( allowExtReq) {
                 console.log(event)
                 if (conf.runFromGET) { // Run http GET request on behalf of invoking user.
                     console.log('In conf.runFromGET')
+
+                    //TODO: Correct this later
                     reqUser = "abc";
                     reqPass = "xyz";
                     console.log()
@@ -225,7 +227,6 @@ module.exports.makeShim = function ( allowExtReq) {
                                 console.log(tableName)
                                 console.log('label')
                                 console.log(label)
-                                label = 100;
                                 const skv = conf.usingPO ?
                                     new SecureKV_PO(conf.host, conf.user, conf.pass, labelOrdering, tableName) :
                                     new SecureKV_TO(process.env.HOST, process.env.USER, process.env.PASS, tableName);
@@ -407,6 +408,7 @@ module.exports.makeShim = function ( allowExtReq) {
             }
 
             p.then((l) => {
+                console.log("found label: " + l);
                 if (l === undefined) {
                     // In case getting the label failed, run on behalf of 'bottom' (completely unprivileged).
                     label = labelOrdering.getBottom();

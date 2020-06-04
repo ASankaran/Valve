@@ -4,7 +4,7 @@
   "LOCALsecLambdaFullPath" : "/Users/kalpernas/serverless/hello-retail-secure/event-writer/secure-publish.js",
   "handlers" : ["handler"],
   "usingPO" : false,
-  "runFromGET" : true,
+  "runFromGET" : false,
   "processEnv" : [
     "RETAIL_STREAM_NAME"
   ],
@@ -20,7 +20,7 @@
     "owner" : ["top"],
     "ccCompany" : ["top"]
   },
-  "host": "mysql.default.svc.cluster.local",
-  "user": "abc",
-  "pass": "xyz"
+  "host": "mysql",
+  "user": "root",
+  "pass": "pass"
 }

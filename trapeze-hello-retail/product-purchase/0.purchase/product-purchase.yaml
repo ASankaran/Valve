@@ -1,0 +1,17 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://127.0.0.1:31112
+functions:
+  product-purchase:
+    lang: node10-express
+    handler: ./product-purchase
+    image: prabkumar/trapeze-product-purchase:latest
+    read_timeout: 500 # seconds
+    write_timeout: 500 # seconds
+    exec_timeout: 0s # disable
+    write_debug: true
+    environment:
+      URL_GETPRICE: 'http://gateway.openfaas:8080/function/product-purchase-get-price'
+      URL_AUTHORIZECC: 'http://gateway.openfaas:8080/function/product-purchase-authorize-cc'
+      URL_PUBLISH: 'http://gateway.openfaas:8080/function/product-purchase-publish'

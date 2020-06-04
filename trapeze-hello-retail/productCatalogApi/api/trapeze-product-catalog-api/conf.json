@@ -2,7 +2,7 @@
   "unsecLambda" : "/home/app/function/catalogApi.js",
   "secLambdaFullPath" : "/home/app/function/handler.js",
   "handlers" : ["any"],
-  "runFromGET" : true,
+  "runFromGET" : false,
   "userPassForIFCOnly" : false,
   "usingPO" : false,
   "processEnv" : [
@@ -23,7 +23,7 @@
     "ccCompany" : ["top"]
   },
   "securityBound" : "public",
-  "host": "mysql.default.svc.cluster.local",
-  "user": "abc",
-  "pass": "xyz"
+  "host": "mysql",
+  "user": "root",
+  "pass": "pass"
 }

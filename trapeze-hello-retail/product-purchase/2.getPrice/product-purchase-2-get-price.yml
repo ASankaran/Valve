@@ -1,9 +1,9 @@
 version: 1.0
 provider:
   name: openfaas
-  gateway: http://192.168.99.101:31112
+  gateway: http://127.0.0.1:31112
 functions:
-  trapeze-product-purchase-2-get-price:
+  product-purchase-get-price:
     lang: node10-express
     handler: ./product-purchase-2-get-price
     image: prabkumar/trapeze-product-purchase-2-get-price:latest
@@ -14,6 +14,6 @@ functions:
     environment:
       DBNAME: 'helloRetail'
       TABLE_PRODUCT_PRICE_NAME: 'productPrice'
-      HOST: 'mysql.default.svc.cluster.local'
-      USER: 'abc'
-      PASS: 'xyz'
+      HOST: 'mysql'
+      USER: 'root'
+      PASS: 'pass'

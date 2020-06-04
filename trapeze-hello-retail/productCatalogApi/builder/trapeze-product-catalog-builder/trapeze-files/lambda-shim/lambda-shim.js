@@ -408,6 +408,7 @@ module.exports.makeShim = function ( allowExtReq) {
             }
 
             p.then((l) => {
+                console.log("found label: " + l);
                 if (l === undefined) {
                     // In case getting the label failed, run on behalf of 'bottom' (completely unprivileged).
                     label = labelOrdering.getBottom();

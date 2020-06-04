@@ -2,7 +2,7 @@
   "unsecLambda" : "/home/app/function/catalog.js",
   "secLambdaFullPath" : "/home/app/function/handlerjs",
   "handlers" : ["processKinesisEvent"],
-  "runFromGET" : true,
+  "runFromGET" : false,
   "usingPO" : false,
   "processEnv" : [
     "TABLE_PRODUCT_CATEGORY_NAME",
@@ -22,7 +22,7 @@
     "ccCompany" : ["top"]
   },
   "securityBound" : "public",
-  "host": "mysql.default.svc.cluster.local",
-  "user": "",
-  "pass": ""
+  "host": "mysql",
+  "user": "root",
+  "pass": "pass"
 }

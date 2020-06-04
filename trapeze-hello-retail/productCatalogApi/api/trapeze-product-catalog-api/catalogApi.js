@@ -103,14 +103,15 @@ const api = {
       kv.init()
         .then(() => kv.entries())
         .then(results => kv.close().then(() => results))
-        .then(results =>
-          callback(null, impl.success(results.filter(entry => JSON.parse(entry.val).category === event.body.queryStringParameters.category).map(entry => ({
+        .then(results => {
+          console.log(results);
+          callback(null, impl.success(results.filter(entry => JSON.parse(entry.value).category === event.body.queryStringParameters.category).map(entry => ({
             id: entry.key,
-            category: JSON.parse(entry.val).category,
-            brand: JSON.parse(entry.val).brand,
-            name: JSON.parse(entry.val).name,
-            description: JSON.parse(entry.val).description,
-          })))))
+            category: JSON.parse(entry.value).category,
+            brand: JSON.parse(entry.value).brand,
+            name: JSON.parse(entry.value).name,
+            description: JSON.parse(entry.value).description,
+          }))))})
         .catch(err => callback(err));
   },
 };

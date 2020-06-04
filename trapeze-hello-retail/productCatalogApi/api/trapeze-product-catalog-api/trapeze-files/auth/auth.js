@@ -22,6 +22,8 @@ const authMapPromise = kv.init()
             map[entry.key] = entry.val;
         }
 
+        console.log("auth map: " + map);
+
         return map;
 
     });
@@ -30,6 +32,9 @@ function auth(user, pass) {
     const md5sum = crypto.createHash('md5');
     md5sum.update(user + pass, 'utf8');
     const h = md5sum.digest('hex');
+
+    console.log("trying to auth: " + user + " " + pass);
+    console.log("got hash: " + h);
 
     return authMapPromise
         .then(map => map[h])

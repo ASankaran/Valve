@@ -4,7 +4,7 @@
   "LOCALsecLambdaFullPath" : "/Users/kalpernas/serverless/hello-retail-secure/event-writer/secure-authorize.js",
   "handlers" : ["handler"],
   "usingPO" : false,
-  "runFromGET" : true,
+  "runFromGET" : false,
   "processEnv" : [
     "TABLE_CREDIT_CARDS_NAME"
   ],
@@ -28,7 +28,7 @@
     "owner" : ["top"],
     "ccCompany" : ["top"]
   },
-  "host": "mysql.default.svc.cluster.local",
-  "user": "abc",
-  "pass": "xyz"
+  "host": "mysql",
+  "user": "root",
+  "pass": "pass"
 }
